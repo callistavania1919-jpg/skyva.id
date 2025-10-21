@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyva — Finance Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <div class="logo">☁️</div>
+        <div class="brand-text">
+          <h2>Skyva</h2>
+          <p>Finance Dashboard</p>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button class="menu-btn active" data-panel="dashboard">🏠 Dashboard</button>
+        <button class="menu-btn" data-panel="transaksi">💸 Transaksi</button>
+        <button class="menu-btn" data-panel="tabungan">💰 Tabungan</button>
+        <button class="menu-btn" data-panel="target">🎯 Target</button>
+        <button class="menu-btn" data-panel="statistik">📊 Statistik</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <p class="small">Skyva © 2025</p>
+      <button class="btn ghost" id="modeToggle">☀️ Mode</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- DASHBOARD -->
+    <section class="panel active" id="dashboard">
+      <div class="panel-header">
+        <h1>👋 Halo, selamat datang di Skyva!</h1>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <p class="small">Total Saldo</p>
+          <p class="big" id="saldo">Rp 0</p>
+        </div>
+        <div class="card">
+          <p class="small">Pemasukan Bulan Ini</p>
+          <p class="big income" id="pemasukan">Rp 0</p>
+        </div>
+        <div class="card">
+          <p class="small">Pengeluaran Bulan Ini</p>
+          <p class="big expense" id="pengeluaran">Rp 0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSAKSI -->
+    <section class="panel" id="transaksi">
+      <div class="panel-header">
+        <h1>💸 Transaksi</h1>
+      </div>
+      <div class="card form-card">
+        <form id="txForm">
+          <input type="text" id="judul" placeholder="Nama transaksi..." required>
+          <div class="row">
+            <input type="number" id="jumlah" placeholder="Jumlah (Rp)" required>
+            <select id="tipe">
+              <option value="income">Pemasukan</option>
+              <option value="expense">Pengeluaran</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Tambah</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>📃 Riwayat Transaksi</h3>
+        <ul class="tx-list" id="txList"></ul>
+      </div>
+    </section>
+
+    <!-- TABUNGAN -->
+    <section class="panel" id="tabungan">
+      <div class="panel-header">
+        <h1>💰 Tabungan</h1>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <p class="small">Total Tabungan</p>
+          <p class="big" id="totalTabungan">Rp 0</p>
+        </div>
+        <div class="card">
+          <p class="small">Tambah ke Tabungan</p>
+          <form id="saveForm">
+            <input type="number" id="saveAmount" placeholder="Jumlah (Rp)" required>
+            <button type="submit" class="btn">Simpan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARGET -->
+    <section class="panel" id="target">
+      <div class="panel-header">
+        <h1>🎯 Target Keuangan</h1>
+      </div>
+      <div class="card target-card">
+        <p class="small">Menabung untuk Liburan</p>
+        <div class="progress">
+          <div class="progress-bar" id="targetBar"></div>
+        </div>
+        <p id="targetProgress">0%</p>
+      </div>
+    </section>
+
+    <!-- STATISTIK -->
+    <section class="panel" id="statistik">
+      <div class="panel-header">
+        <h1>📊 Statistik Keuangan</h1>
+      </div>
+      <p>(Grafik akan muncul di sini nanti!)</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
