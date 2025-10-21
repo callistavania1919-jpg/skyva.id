@@ -1,0 +1,297 @@
+/* SKYVA — Pastel Beige + Sky Blue Theme */
+/* Font dan dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f8f5f0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #a7c7e7;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .logo {
+  font-size: 28px;
+}
+
+.brand-text h2 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.brand-text p {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menu-btn.active,
+.menu-btn:hover {
+  background: #fff;
+  color: #5394d6;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.sidebar-footer .small {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* Header & Controls */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+input,
+select {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.small {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.big {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.target-card .progress {
+  background: #eee;
+  border-radius: 10px;
+  height: 8px;
+  margin-top: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #7bbcff;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.btn {
+  background: #7bbcff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #5394d6;
+}
+
+/* Transaksi list */
+.tx-list {
+  list-style: none;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.tx-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f8f5;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.tx-list li:hover {
+  background: #f1f0ed;
+}
+
+.tx-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tx-title .emoji {
+  font-size: 20px;
+}
+
+.tx-amount {
+  font-weight: 600;
+}
+
+.tx-amount.income {
+  color: #2ea44f;
+}
+
+.tx-amount.expense {
+  color: #d73a49;
+}
+
+/* Form card */
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+    padding: 10px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .menu-btn {
+    font-size: 0;
+  }
+
+  .menu-btn::before {
+    content: "•";
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
+
+/* Dark / Night pastel mode */
+body.dark {
+  background: #242424;
+  color: #eaeaea;
+}
+
+body.dark .card {
+  background: #2f2f2f;
+}
+
+body.dark .tx-list li {
+  background: #333;
+}
+
+body.dark .tx-list li:hover {
+  background: #3d3d3d;
+}
